@@ -1,25 +1,12 @@
 package org.kd.springbootrest.demo.server.model;
 
+import lombok.*;
+
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Capital {
     private String name;
-
-    public Capital() {
-    }
-
-    public Capital(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Capital{" + "name='" + name + '\'' + '}';
-    }
 }

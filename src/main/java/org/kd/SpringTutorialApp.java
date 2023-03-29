@@ -35,6 +35,14 @@ public class SpringTutorialApp {
                             , "l: playerx p: pass"
                     )
                     .forEach(System.out::println);
+            List.of("".repeat(3)
+                            , "Computing integrals."
+                            , "This is just a silly REST Backend Service for estimating integrals. Example request:"
+                            , "To compute integral S sin x dx for interval -PI to PI: http://localhost:8080/sin/-3.141/3.141"
+                            , "S log10 x dx for (1-10): http://localhost:8080/log10/1/10"
+                            , ""
+                            , "Available are single-argument functions from java.lang.Math class: sin, cos, tan, log10, abs, exp, etc.")
+                    .forEach(System.out::println);
         }
     }
 
