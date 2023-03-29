@@ -1,5 +1,6 @@
 package org.kd.nileride.model;
 
+import lombok.Getter;
 import org.kd.nileride.common.CyclicList;
 import org.kd.nileride.config.GameConfig;
 import org.springframework.context.annotation.Import;
@@ -16,7 +17,10 @@ public class Track {
     private static List<Integer> leftBankData = Arrays.asList(40, 39, 39, 38, 37, 39, 39, 37, 39, 39, 38, 39, 39, 38, 37, 36, 34, 34, 30, 30, 30, 28, 28, 24, 25, 26, 27, 28, 29, 27, 25, 20, 29, 28, 28, 27, 27, 28);
     private static List<Integer> rightBankData = Arrays.asList(60, 59, 59, 58, 57, 59, 59, 59, 59, 57, 59, 58, 57, 57, 57, 60, 60, 60, 58, 58, 55, 55, 55, 54, 54, 53, 49, 47, 45, 44, 42, 39, 47, 50, 55, 58, 62, 63);
 
+    @Getter
     private CyclicList<Integer> leftBank;
+
+    @Getter
     private CyclicList<Integer> rightBank;
 
     public Track() {
@@ -55,14 +59,6 @@ public class Track {
                 return false;
         }
         return true;
-    }
-
-    public CyclicList<Integer> getLeftBank() {
-        return leftBank;
-    }
-
-    public CyclicList<Integer> getRightBank() {
-        return rightBank;
     }
 
 }

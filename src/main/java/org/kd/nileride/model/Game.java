@@ -1,5 +1,6 @@
 package org.kd.nileride.model;
 
+import lombok.Getter;
 import org.kd.nileride.config.GameConfig;
 import org.kd.nileride.view.Drawer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import java.util.logging.Logger;
 @Import(GameConfig.class)
 public class Game extends Thread {
 
+    @Getter
     private static final int GAME_FRAME_MS = 150;
     public Board board;
     public Drawer drawer;
@@ -46,9 +48,5 @@ public class Game extends Thread {
 
     public void stopGame() {
         this.gameRunning = false;
-    }
-
-    public static int getGameFrameMs() {
-        return GAME_FRAME_MS;
     }
 }

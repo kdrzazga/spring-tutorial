@@ -2,14 +2,12 @@ package org.kd.nileride.model;
 
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 public class BoardKeyListener implements EventHandler<KeyEvent> {
 
     private Board board;
-
-    public BoardKeyListener(Board board) {
-        this.board = board;
-    }
 
     @Override
     public void handle(KeyEvent event) {

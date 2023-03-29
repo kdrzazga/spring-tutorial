@@ -1,8 +1,11 @@
 package org.kd.nileride.common;
 
+import lombok.AllArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.stream.IntStream;
 
+@AllArgsConstructor
 public class CyclicList<T> extends ArrayList<T> {
 
     private final int capacity;
@@ -22,10 +25,6 @@ public class CyclicList<T> extends ArrayList<T> {
         if (index < 0)
             index = capacity + index;
         return super.get(index);
-    }
-
-    public CyclicList(int capacity) {
-        this.capacity = capacity;
     }
 
     public void shiftLeft() {

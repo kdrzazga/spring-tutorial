@@ -1,5 +1,10 @@
 package org.kd.nileride.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Board {
 
     private Vehicle vehicle;
@@ -29,31 +34,4 @@ public class Board {
         //TODO
     }
 
-    public void setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
-    }
-
-    public Vehicle getVehicle() {
-        return vehicle;
-    }
-
-    public Track getTrack() {
-        return track;
-    }
-
-    public void setBoardKeyListener(BoardKeyListener boardKeyListener) {
-        this.boardKeyListener = boardKeyListener;
-    }
-
-    public BoardKeyListener getBoardKeyListener() {
-        return boardKeyListener;
-    }
-
-    public void setEnemy(Vehicle enemy) {
-        this.enemy = enemy;
-    }
-
-    public Vehicle getEnemy() {
-        return enemy;
-    }
 }

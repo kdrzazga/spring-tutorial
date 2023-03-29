@@ -79,7 +79,4 @@ public class Drawer {
         gc.fillOval(vx - 5, vy + 5, width, height);
     }
 
-    public GraphicsContext getGc() {
-        return gc;
-    }
 }
