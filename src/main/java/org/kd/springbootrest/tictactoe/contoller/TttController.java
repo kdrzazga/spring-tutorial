@@ -2,8 +2,8 @@ package org.kd.springbootrest.tictactoe.contoller;
 
 import org.kd.springbootrest.config.RestTemplateConfig;
 import org.kd.springbootrest.demo.client.CommonUtility;
-import org.kd.springbootrest.tictactoe.HtmlPageBuilder;
-import org.kd.springbootrest.tictactoe.model.TicTacToeLogic;
+import org.kd.springbootrest.tictactoe.utils.HtmlPageBuilder;
+import org.kd.springbootrest.tictactoe.service.TicTacToeService;
 import org.kd.springbootrest.tictactoe.model.TicTacToeMove;
 import org.kd.springbootrest.tictactoe.model.TicTacToeTable;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class TttController {
     @Autowired
     private CommonUtility commonUtility;
 
-    private TicTacToeLogic logic = new TicTacToeLogic();
+    private TicTacToeService logic = new TicTacToeService();
 
     @GetMapping(path = "/place/{x},{y}")
     public String checkTttField(@PathVariable("x") Character x,

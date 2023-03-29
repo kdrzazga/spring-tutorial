@@ -1,6 +1,8 @@
-package org.kd.springbootrest.tictactoe.model;
+package org.kd.springbootrest.tictactoe.service;
 
-public class TicTacToeLogic {
+import org.kd.springbootrest.tictactoe.model.TicTacToeTable;
+
+public class TicTacToeService {
 
     private TicTacToeTable table = new TicTacToeTable();
 

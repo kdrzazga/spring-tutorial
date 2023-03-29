@@ -1,4 +1,4 @@
-package org.kd.springbootrest.tictactoe;
+package org.kd.springbootrest.tictactoe.utils;
 
 import java.util.List;
 import java.util.Vector;
