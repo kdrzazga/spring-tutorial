@@ -9,12 +9,12 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class RestTemplateConfig {
 
-    @Value("${server.port:8083}")
+    @Value("${server.port:8080}")
     private String port;
 
     @Bean
     public RestTemplate countryRestTemplate(RestTemplateBuilder restTemplateBuilder) {
-        return restTemplateBuilder.rootUri("http://localhost:8083").build();
+        return restTemplateBuilder.rootUri("http://localhost:8080").build();
     }
 
     public String getPort() {

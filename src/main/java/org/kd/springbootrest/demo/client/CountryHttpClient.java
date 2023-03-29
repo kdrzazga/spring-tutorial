@@ -14,7 +14,7 @@ public class CountryHttpClient {
                 .build();
 
         var request = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8083" + endpoint))
+                .uri(URI.create("http://localhost:8080" + endpoint))
                 .GET()   // this is the default
                 .build();
         try {

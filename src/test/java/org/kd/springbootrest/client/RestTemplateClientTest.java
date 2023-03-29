@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest(classes = {SpringTutorialApp.class})
 public class RestTemplateClientTest {
 
-    private String serviceAddress = "http://localhost:8083";
+    private String serviceAddress = "http://localhost:8080";
     private HttpMethod requestType;
     private String requestAsString;
     private String requestUrl;
@@ -37,7 +37,8 @@ public class RestTemplateClientTest {
         requestUrl = serviceAddress.concat("/countries");
         requestAsString = "";
 
-        ResponseEntity<String> response = commonUtility.processHttpRequest(requestType, requestAsString, requestUrl, "application/json");
+        ResponseEntity<String> response = commonUtility.processHttpRequest(requestType, requestAsString, requestUrl
+                , "application/json");
         retrieveResponseBodyAndStatusCode(response);
 
         assertEquals("200", responseStatusCode);

@@ -1,9 +1,8 @@
 package org.kd.springbootrest.client;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.kd.springbootrest.demo.client.CountryHttpClient;
 import org.springframework.http.HttpStatus;
 
@@ -13,8 +12,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class CountryHttpClientTest {
-
-    private static byte countryCounter;
 
     @Test
     public void testCountriesEndpoint() {
@@ -38,17 +35,16 @@ public class CountryHttpClientTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"Poland", "Germany", "Chad"})
-    public void testSingleCountryEndpointGetCountryName(String country) {
-        var response = new CountryHttpClient().request("/country/" + countryCounter);
+    @CsvSource({"0, Poland", "1, Germany", "2, Chad"})
+    public void testSingleCountryEndpointGetCountryName(Integer i, String country) {
+        var response = new CountryHttpClient().request("/country/" + i);
 
         assertNotNull(response);
         assertThat(response.body(), containsString(country));
-        countryCounter++;
     }
 
     @Test
-    public void testGetPoland(){
+    public void testGetPoland() {
         var response = new CountryHttpClient().request("/country/0");
 
         assertNotNull(response);
@@ -57,18 +53,13 @@ public class CountryHttpClientTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"Warszawa", "Berlin", "Njamena"})
-    public void testSingleCountryEndpointGetCountryCapital(String capital) {
-        var endpoint = "/country/" + countryCounter;
+    @CsvSource({"Warszawa, 0", "Berlin, 1", "Njamena, 2"})
+    public void testSingleCountryEndpointGetCountryCapital(String capital, Integer index) {
+        var endpoint = "/country/" + index;
         var response = new CountryHttpClient().request(endpoint);
 
         assertNotNull(response);
         assertThat(response.body(), containsString(capital));
-        countryCounter++;
     }
 
-    @BeforeEach
-    public void resetCountryCounter() {
-        countryCounter = 0;
-    }
 }
