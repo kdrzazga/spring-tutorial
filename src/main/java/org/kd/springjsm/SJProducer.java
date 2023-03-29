@@ -1,6 +1,5 @@
 package org.kd.springjsm;
 
-
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
 
