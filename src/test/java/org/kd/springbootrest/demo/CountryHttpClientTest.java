@@ -1,4 +1,4 @@
-package org.kd.springbootrest.client;
+package org.kd.springbootrest.demo;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
